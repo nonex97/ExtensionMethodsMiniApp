@@ -13,16 +13,11 @@ namespace ExtensionMethods
             PersonModel person = new PersonModel();
 
             person.FirstName = "What is your first name: ".RequestString();
-
             person.LastName = "What is your last name: ".RequestString();
+            person.Age = "What is your age: ".RequestInt(1,120);
+            person.AccountBalance = "How much do you have on your account: ".RequestDecimal();
 
-            person.Age = "What is your age: ".RequestInt(0,120);
-
-            //person.Age = ConsoleHelper.RequestInt("What is your age: ", 0, 120); // this is how it would look if we didn't make it an extension method
-
-            Console.WriteLine($"First name: {person.FirstName}");
-            Console.WriteLine($"Last name: {person.LastName}");
-            Console.WriteLine($"Age: {person.Age}");
+            Console.WriteLine($"Welcome {person.FirstName} {person.LastName} that is {person.Age} years old and has {person.AccountBalance} EUR on their account!");
 
             Console.ReadLine();
         }
